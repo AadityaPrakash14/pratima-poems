@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Custom CSS variables for dark theme */
+:root {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #a78bfa;
+}
+
+/* Base styles for dark theme */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Typography for literary content */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  /* Links */
+  a {
+    color: #a78bfa;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #c4b5fd;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+  }
+}
+
+/* Component layer for reusable styles */
+@layer components {
+  .container-page {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .prose-poem {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: var(--color-text-primary);
+    white-space: pre-line;
+  }
+
+  .prose-story {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.125rem;
+    line-height: 2;
+    color: var(--color-text-primary);
+  }
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+  
+  h3 {
+    font-size: 1.875rem;
+  }
+  
+  .container-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
