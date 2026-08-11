@@ -1,119 +1,322 @@
 @import "tailwindcss";
 
-/* Custom CSS variables for dark theme */
+/* Google Fonts Import - Devanagari-first Typography */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* ============================================
+   DESIGN SYSTEM — Pratima साहित्य संग्रह
+   Warm Paper Literary Theme (Light Only)
+   ============================================ */
+
 :root {
-  --color-bg-primary: #0f172a;
-  --color-bg-secondary: #1e293b;
-  --color-bg-tertiary: #334155;
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #cbd5e1;
-  --color-text-muted: #94a3b8;
-  --color-accent: #8b5cf6;
-  --color-accent-hover: #a78bfa;
+  /* Paper Background Colors */
+  --color-paper: #F1ECE3;
+  --color-paper-light: #F8F5EF;
+  --color-paper-deep: #E9E0D2;
+  
+  /* Text Colors */
+  --color-ink: #302A24;
+  --color-ink-soft: #5C5147;
+  --color-muted: #80756A;
+  
+  /* Accent Colors */
+  --color-maroon: #6F1D2A;
+  --color-maroon-hover: #861F2D;
+  --color-walnut: #684A37;
+  --color-gold: #A88955;
+  
+  /* Border */
+  --color-border: #D4C6B3;
+  
+  /* Typography */
+  --font-literary: 'Noto Serif Devanagari', Georgia, 'Times New Roman', serif;
+  --font-body: 'Mukta', system-ui, -apple-system, sans-serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
 }
 
-/* Base styles for dark theme */
-@layer base {
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
   
-  body {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
-  }
-
-  /* Typography for literary content */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  }
-
-  h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-  }
-
-  h2 {
-    font-size: 1.875rem;
-    font-weight: 700;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  /* Links */
-  a {
-    color: #a78bfa;
-    transition: color 0.2s ease;
-  }
-  
-  a:hover {
-    color: #c4b5fd;
-  }
-
-  /* Focus styles for accessibility */
-  *:focus-visible {
-    outline: 2px solid #8b5cf6;
-    outline-offset: 2px;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* Component layer for reusable styles */
-@layer components {
-  .container-page {
-    max-width: 72rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .prose-poem {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 1.125rem;
-    line-height: 1.625;
-    color: var(--color-text-primary);
-    white-space: pre-line;
-  }
-
-  .prose-story {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 1.125rem;
-    line-height: 2;
-    color: var(--color-text-primary);
-  }
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
-/* Responsive styles */
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+/* Literary headings - Devanagari-first */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-literary);
+  color: var(--color-ink);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+/* Responsive typography */
 @media (min-width: 768px) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   
   h2 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
   
   h3 {
     font-size: 1.875rem;
   }
-  
-  .container-page {
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-maroon);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-maroon-hover);
+}
+
+/* ============================================
+   FOCUS STYLES (Accessibility)
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--color-maroon);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+  background-color: rgba(111, 29, 42, 0.15);
+  color: var(--color-ink);
+}
+
+/* ============================================
+   SCROLLBAR (Webkit)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Font families */
+.font-literary {
+  font-family: var(--font-literary);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* Text colors */
+.text-ink {
+  color: var(--color-ink);
+}
+
+.text-ink-soft {
+  color: var(--color-ink-soft);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-maroon {
+  color: var(--color-maroon);
+}
+
+/* Background colors */
+.bg-paper {
+  background-color: var(--color-paper);
+}
+
+.bg-paper-light {
+  background-color: var(--color-paper-light);
+}
+
+.bg-paper-deep {
+  background-color: var(--color-paper-deep);
+}
+
+/* Border color */
+.border-warm {
+  border-color: var(--color-border);
+}
+
+/* Container widths */
+.container-content {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-reading {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container-hero {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-content,
+  .container-reading,
+  .container-hero {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .container-page {
+  .container-content,
+  .container-reading,
+  .container-hero {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+/* Literary prose styles */
+.prose-poem {
+  font-family: var(--font-literary);
+  font-size: 1.25rem;
+  line-height: 2;
+  color: var(--color-ink);
+  white-space: pre-line;
+}
+
+.prose-story {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: var(--color-ink);
+}
+
+@media (min-width: 768px) {
+  .prose-poem {
+    font-size: 1.375rem;
+  }
+  
+  .prose-story {
+    font-size: 1.25rem;
   }
 }

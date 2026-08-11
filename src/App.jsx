@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
 import {
   HomePage,
   PoemsPage,
@@ -17,20 +18,23 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        {/* Main pages */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/poems" element={<PoemsPage />} />
-        <Route path="/stories" element={<StoriesPage />} />
-        
-        {/* Detail pages with dynamic ID */}
-        <Route path="/poems/:id" element={<PoemDetailPage />} />
-        <Route path="/stories/:id" element={<StoryDetailPage />} />
-        
-        {/* About page */}
-        <Route path="/about" element={<AboutPage />} />
-        
-        {/* Catch-all for 404 */}
-        <Route path="*" element={<NotFoundPage />} />
+        {/* All routes wrapped in MainLayout */}
+        <Route element={<MainLayout />}>
+          {/* Main pages */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/poems" element={<PoemsPage />} />
+          <Route path="/stories" element={<StoriesPage />} />
+          
+          {/* Detail pages with dynamic ID */}
+          <Route path="/poems/:id" element={<PoemDetailPage />} />
+          <Route path="/stories/:id" element={<StoryDetailPage />} />
+          
+          {/* About page */}
+          <Route path="/about" element={<AboutPage />} />
+          
+          {/* Catch-all for 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
     </HashRouter>
   );
