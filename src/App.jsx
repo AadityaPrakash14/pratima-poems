@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
+import ScrollToTop from './components/ScrollToTop';
 import {
   HomePage,
   PoemsPage,
@@ -13,10 +14,12 @@ import {
 /**
  * App - Root application component with HashRouter for GitHub Pages compatibility
  * Uses hash routing (/#/path) to work correctly with static hosting
+ * ScrollToTop ensures pages start at scroll position 0 on navigation
  */
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         {/* All routes wrapped in MainLayout */}
         <Route element={<MainLayout />}>

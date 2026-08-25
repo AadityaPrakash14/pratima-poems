@@ -70,45 +70,52 @@
    BASE STYLES
    ============================================ */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset and base styles - must be in @layer base to not override Tailwind utilities */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 
-body {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  /* Subtle paper texture using CSS noise pattern */
-  background-image: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-blend-mode: soft-light;
-  background-size: 200px 200px;
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    /* Very subtle paper texture using gentle CSS gradient - NOT noisy SVG */
+    background-image: 
+      linear-gradient(
+        to bottom,
+        var(--color-paper) 0%,
+        var(--color-paper-warm) 50%,
+        var(--color-paper) 100%
+      );
+    background-attachment: fixed;
+  }
 }
 
 /* ============================================
@@ -116,10 +123,11 @@ body {
    ============================================ */
 
 /* Literary headings - Devanagari-first */
+/* Devanagari script requires generous line-height for matras (vowel marks) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-literary);
   color: var(--color-ink);
-  line-height: 1.3;
+  line-height: 1.5;
   font-weight: 600;
 }
 
@@ -222,6 +230,13 @@ a:hover {
 /* Font families */
 .font-literary {
   font-family: var(--font-literary);
+}
+
+/* Devanagari text helper - ensures matras are not clipped */
+.devanagari-safe {
+  line-height: 1.8;
+  padding-top: 0.15em;
+  overflow: visible;
 }
 
 .font-body {
@@ -343,10 +358,6 @@ a:hover {
 /* Manuscript page container - like an old diary page */
 .manuscript-page {
   background-color: var(--color-paper-light);
-  background-image: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-blend-mode: multiply;
-  background-size: 150px 150px;
   border: 1px solid var(--color-border-warm);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-page);
@@ -378,12 +389,9 @@ a:hover {
   border-right: 2px solid var(--color-gold);
 }
 
-/* Card styles - like old manuscript pages */
+/* Card styles - elegant literary collection cards */
 .manuscript-card {
   background-color: var(--color-paper-light);
-  background-image: 
-    linear-gradient(to bottom, transparent 95%, var(--color-border) 95%);
-  background-size: 100% 2rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
@@ -420,10 +428,6 @@ a:hover {
 /* Book closing page style for footer */
 .book-closing {
   background-color: var(--color-paper-deep);
-  background-image: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-blend-mode: multiply;
-  background-size: 180px 180px;
   border-top: 1px solid var(--color-border-warm);
   position: relative;
 }
@@ -445,4 +449,359 @@ a:hover {
     var(--color-gold) 80%,
     transparent
   );
+}
+
+
+/* ============================================
+   LITERARY READING EXPERIENCE
+   "मैं उनकी पुरानी डायरी का एक पन्ना पढ़ रहा हूँ।"
+   ============================================ */
+
+/* Manuscript Reading Surface - The paper container */
+.manuscript-reading-surface {
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--color-border-warm);
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 3px rgba(48, 42, 36, 0.05),
+    0 6px 20px rgba(48, 42, 36, 0.07),
+    0 16px 48px rgba(48, 42, 36, 0.05);
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.manuscript-inner {
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+@media (min-width: 640px) {
+  .manuscript-inner {
+    padding: 3.5rem 2.5rem 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .manuscript-inner {
+    padding: 4rem 4rem 5rem;
+  }
+}
+
+/* Subtle corner decorations - very restrained */
+.manuscript-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.manuscript-corner--top-left {
+  top: 16px;
+  left: 16px;
+  border-top: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-gold);
+}
+
+.manuscript-corner--top-right {
+  top: 16px;
+  right: 16px;
+  border-top: 1px solid var(--color-gold);
+  border-right: 1px solid var(--color-gold);
+}
+
+.manuscript-corner--bottom-left {
+  bottom: 16px;
+  left: 16px;
+  border-bottom: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-gold);
+}
+
+.manuscript-corner--bottom-right {
+  bottom: 16px;
+  right: 16px;
+  border-bottom: 1px solid var(--color-gold);
+  border-right: 1px solid var(--color-gold);
+}
+
+/* Literary Header */
+.literary-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.literary-header__type {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-muted);
+  margin-bottom: 1.25rem;
+}
+
+.literary-header__flourish {
+  display: none;
+}
+
+.literary-header__title {
+  font-family: var(--font-literary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin-bottom: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .literary-header__title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .literary-header__title {
+    font-size: 2.25rem;
+  }
+}
+
+.literary-header__subtitle {
+  font-family: var(--font-literary);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.literary-header__author {
+  font-family: var(--font-literary);
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.75rem;
+}
+
+.literary-header__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.literary-header__line {
+  width: 2rem;
+  height: 1px;
+  opacity: 0.35;
+}
+
+.literary-header__line--left {
+  background: linear-gradient(to right, transparent, var(--color-gold));
+}
+
+.literary-header__line--right {
+  background: linear-gradient(to left, transparent, var(--color-gold));
+}
+
+.literary-header__diamond {
+  width: 4px;
+  height: 4px;
+  background-color: var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.4;
+}
+
+/* Poem Body */
+.poem-body {
+  margin-bottom: 2rem;
+}
+
+.poem-content {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.poem-stanza {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.poem-stanza:last-child {
+  margin-bottom: 0;
+}
+
+.poem-line {
+  font-family: var(--font-literary);
+  font-size: 1.125rem;
+  line-height: 2;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .poem-line {
+    font-size: 1.1875rem;
+    line-height: 2.1;
+  }
+}
+
+/* Placeholder styling for poems */
+.poem-body--placeholder .poem-content {
+  text-align: center;
+}
+
+.poem-placeholder-text {
+  font-family: var(--font-literary);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.poem-placeholder-note {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  opacity: 0.8;
+}
+
+/* Story Body */
+.story-body {
+  margin-bottom: 2rem;
+}
+
+.story-content {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.story-paragraph {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  color: var(--color-ink);
+  margin-bottom: 1.375rem;
+  text-align: left;
+  text-indent: 1.5em;
+}
+
+.story-paragraph:first-child {
+  text-indent: 0;
+}
+
+.story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .story-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.95;
+  }
+}
+
+/* Placeholder styling for stories */
+.story-body--placeholder .story-content {
+  text-align: center;
+}
+
+.story-placeholder-text {
+  font-family: var(--font-literary);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.story-placeholder-note {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  opacity: 0.8;
+}
+
+/* Ending Mark */
+.ending-mark {
+  text-align: center;
+  padding: 2rem 0 0.5rem;
+  margin-top: 1rem;
+}
+
+.ending-mark__symbol {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--color-gold);
+  opacity: 0.4;
+}
+
+.ending-mark__text {
+  display: none;
+}
+
+.ending-mark__flourish {
+  display: none;
+}
+
+/* Reading Navigation */
+.reading-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 0;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.reading-navigation__link {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-maroon);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.reading-navigation__link:hover {
+  color: var(--color-maroon-hover);
+}
+
+.reading-navigation__link--center {
+  font-weight: 400;
+}
+
+.reading-navigation__link--prev,
+.reading-navigation__link--next,
+.reading-navigation__link--disabled {
+  display: none;
+}
+
+/* Back Link at top of reading page */
+.reading-back-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-maroon);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  margin-bottom: 1.5rem;
+}
+
+.reading-back-link:hover {
+  color: var(--color-maroon-hover);
+}
+
+/* Reading page container */
+.reading-page {
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+  background-color: var(--color-paper);
+}
+
+@media (min-width: 640px) {
+  .reading-page {
+    padding: 2.5rem 1.5rem 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .reading-page {
+    padding: 3rem 2rem 5rem;
+  }
 }
