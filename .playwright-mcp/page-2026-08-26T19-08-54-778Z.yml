@@ -1,0 +1,113 @@
+- generic [ref=f1e18]:
+  - banner [ref=f1e19]:
+    - generic [ref=f1e20]:
+      - link "प्रतिमा Admin" [ref=f1e22] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=f1e23]: प्रतिमा
+        - generic [ref=f1e24]: Admin
+      - generic [ref=f1e25]:
+        - generic "princeaditya2001@gmail.com" [ref=f1e26]
+        - button "लॉगआउट" [ref=f1e27]
+  - complementary [ref=f1e28]:
+    - navigation [ref=f1e29]:
+      - generic [ref=f1e30]:
+        - link "Dashboard" [ref=f1e31] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=f1e35] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=f1e39] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=f1e43] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=f1e50] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=f1e55]: प्रतिमा Admin Portal
+  - main [ref=f1e56]:
+    - generic [ref=f1e412]:
+      - link "कहानियों पर वापस" [ref=f1e413] [cursor=pointer]:
+        - /url: "#/admin/stories"
+      - generic [ref=f1e418]:
+        - heading "कहानी संपादित करें" [level=1] [ref=f1e419]
+        - paragraph [ref=f1e420]: "ID: 8a8a2b64-72b0-4443-b4b5-5131c878b7c0"
+      - generic [ref=f1e423]:
+        - generic [ref=f1e424]:
+          - generic [ref=f1e425]:
+            - generic [ref=f1e426]: शीर्षक*
+            - textbox "शीर्षक" [ref=f1e427]:
+              - /placeholder: कहानी का शीर्षक
+              - text: E2E परीक्षण कहानी - संशोधित
+          - generic [ref=f1e428]:
+            - generic [ref=f1e429]: उपशीर्षक
+            - textbox "उपशीर्षक" [ref=f1e430]:
+              - /placeholder: वैकल्पिक उपशीर्षक
+            - paragraph [ref=f1e431]: वैकल्पिक
+        - generic [ref=f1e432]:
+          - generic [ref=f1e433]: Slug*
+          - generic [ref=f1e434]:
+            - textbox "Slug" [ref=f1e435]:
+              - /placeholder: jaise-mera-slug
+              - text: e2e
+            - button "Reset" [ref=f1e437]
+          - paragraph [ref=f1e438]: URL में उपयोग होगा (केवल lowercase अक्षर, संख्याएँ, हाइफ़न)
+        - generic [ref=f1e439]:
+          - generic [ref=f1e440]: पाठ*
+          - textbox "पाठ" [ref=f1e441]:
+            - /placeholder: "कहानी का पूरा पाठ यहाँ लिखें...\r\n\r\nहर पंक्ति के बीच\r\nकी जगह संरक्षित रहेगी।"
+            - text: यह एक परीक्षण कहानी है। इसमें कई पंक्तियाँ हैं। यह E2E परीक्षण के लिए बनाई गई है।
+          - generic [ref=f1e442]:
+            - paragraph [ref=f1e444]: पंक्तियों के बीच की जगह संरक्षित रहेगी।
+            - generic [ref=f1e445]:
+              - generic [ref=f1e446]: 5 पंक्तियाँ
+              - generic [ref=f1e447]: •
+              - generic [ref=f1e448]: 83 अक्षर
+        - generic [ref=f1e449]:
+          - generic [ref=f1e450]: सारांश
+          - textbox "सारांश" [ref=f1e451]:
+            - /placeholder: कहानी का संक्षिप्त सारांश (सूची में दिखेगा)
+          - paragraph [ref=f1e452]: वैकल्पिक - सूची पृष्ठ पर दिखाया जाएगा
+        - generic [ref=f1e453]:
+          - heading "अतिरिक्त जानकारी" [level=3] [ref=f1e454]
+          - generic [ref=f1e455]:
+            - generic [ref=f1e456]:
+              - generic [ref=f1e457]: श्रेणी
+              - combobox "श्रेणी" [ref=f1e459]:
+                - option "कोई श्रेणी नहीं" [selected]
+              - paragraph [ref=f1e460]: वैकल्पिक
+            - generic [ref=f1e461]:
+              - generic [ref=f1e462]: लिखने की तिथि
+              - textbox "लिखने की तिथि" [ref=f1e463]
+              - paragraph [ref=f1e464]: वैकल्पिक - मूल रचना तिथि
+            - generic [ref=f1e465]:
+              - generic [ref=f1e466]: पढ़ने का समय (मिनट)
+              - spinbutton "पढ़ने का समय (मिनट)" [ref=f1e467]
+              - paragraph [ref=f1e468]: वैकल्पिक
+        - generic [ref=f1e469]:
+          - heading "मुखपृष्ठ सेटिंग्स" [level=3] [ref=f1e470]
+          - generic [ref=f1e472] [cursor=pointer]:
+            - checkbox "मुखपृष्ठ पर दिखाएँ" [ref=f1e473]
+            - generic [ref=f1e474]: मुखपृष्ठ पर दिखाएँ
+        - generic [ref=f1e475]:
+          - heading "कवर चित्र" [level=3] [ref=f1e476]
+          - generic [ref=f1e478]:
+            - button "Choose File" [ref=f1e479]
+            - generic [ref=f1e481] [cursor=pointer]:
+              - paragraph [ref=f1e484]: फ़ाइल चुनें
+              - paragraph [ref=f1e485]: खींचकर छोड़ें या क्लिक करें
+              - paragraph [ref=f1e486]: "अधिकतम आकार: 5MB"
+            - paragraph [ref=f1e487]: "JPEG, PNG, WEBP फ़ाइलें स्वीकृत। अधिकतम आकार: 5MB"
+        - generic [ref=f1e488]:
+          - heading "पांडुलिपि छवि" [level=3] [ref=f1e489]
+          - generic [ref=f1e491]:
+            - button "Choose File" [ref=f1e492]
+            - generic [ref=f1e494] [cursor=pointer]:
+              - paragraph [ref=f1e497]: फ़ाइल चुनें
+              - paragraph [ref=f1e498]: खींचकर छोड़ें या क्लिक करें
+              - paragraph [ref=f1e499]: "अधिकतम आकार: 10MB"
+            - paragraph [ref=f1e500]: "JPEG, PNG, WEBP, PDF फ़ाइलें स्वीकृत। अधिकतम आकार: 10MB (वैकल्पिक)"
+        - generic [ref=f1e501]:
+          - button "हटाएँ" [ref=f1e503] [cursor=pointer]
+          - generic [ref=f1e505]:
+            - button "रद्द करें" [ref=f1e506] [cursor=pointer]
+            - button "संग्रहित करें" [ref=f1e508] [cursor=pointer]
+            - button "सहेजें" [ref=f1e510] [cursor=pointer]
+            - button "अपडेट करें" [ref=f1e512] [cursor=pointer]

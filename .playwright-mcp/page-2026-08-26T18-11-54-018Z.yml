@@ -1,0 +1,16 @@
+- generic [ref=e261]:
+  - generic [ref=e262]:
+    - heading "प्रतिमा Admin" [level=1] [ref=e263]
+    - paragraph [ref=e264]: एडमिन पोर्टल में लॉगिन करें
+  - generic [ref=e265]:
+    - generic [ref=e266]:
+      - generic [ref=e267]: ईमेल
+      - textbox "ईमेल" [ref=e268]:
+        - /placeholder: admin@example.com
+    - generic [ref=e269]:
+      - generic [ref=e270]: पासवर्ड
+      - textbox "पासवर्ड" [ref=e271]:
+        - /placeholder: ••••••••
+    - button "लॉगिन करें" [ref=e272]
+  - link "← साइट पर वापस जाएँ" [ref=e274] [cursor=pointer]:
+    - /url: "#/"

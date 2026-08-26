@@ -1,0 +1,63 @@
+- generic [ref=f1e18]:
+  - banner [ref=f1e19]:
+    - generic [ref=f1e20]:
+      - link "प्रतिमा Admin" [ref=f1e22] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=f1e23]: प्रतिमा
+        - generic [ref=f1e24]: Admin
+      - generic [ref=f1e25]:
+        - generic "princeaditya2001@gmail.com" [ref=f1e26]
+        - button "लॉगआउट" [ref=f1e27]
+  - complementary [ref=f1e28]:
+    - navigation [ref=f1e29]:
+      - generic [ref=f1e30]:
+        - link "Dashboard" [ref=f1e31] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=f1e35] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=f1e39] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=f1e43] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=f1e50] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=f1e55]: प्रतिमा Admin Portal
+  - main [ref=f1e56]:
+    - generic [ref=f1e514]:
+      - generic [ref=f1e516]:
+        - generic [ref=f1e517]:
+          - heading "कहानियाँ" [level=1] [ref=f1e518]
+          - paragraph [ref=f1e519]: सभी कहानियों का प्रबंधन करें
+        - button [ref=f1e520]
+      - generic [ref=f1e525]:
+        - combobox [ref=f1e529]:
+          - option "सभी स्थिति" [selected]
+          - option "सभी स्थिति"
+          - option "ड्राफ़्ट"
+          - option "प्रकाशित"
+          - option "संग्रहित"
+        - combobox [ref=f1e533]:
+          - option "सभी श्रेणियाँ" [selected]
+          - option "सभी श्रेणियाँ"
+        - generic [ref=f1e534]: 1 कहानी
+      - table [ref=f1e537]:
+        - rowgroup [ref=f1e538]:
+          - row [ref=f1e539]:
+            - columnheader "शीर्षक" [ref=f1e540]
+            - columnheader "स्थिति" [ref=f1e541]
+            - columnheader "श्रेणी" [ref=f1e542]
+            - columnheader "मुखपृष्ठ" [ref=f1e543]
+            - columnheader "अपडेट" [ref=f1e544]
+            - columnheader "क्रियाएँ" [ref=f1e545]
+        - rowgroup [ref=f1e546]:
+          - row [ref=f1e547] [cursor=pointer]:
+            - cell "E2E परीक्षण कहानी - संशोधित" [ref=f1e548]
+            - cell "संग्रहित" [ref=f1e551]
+            - cell "—" [ref=f1e555]
+            - cell "—" [ref=f1e556]
+            - cell "27 अग॰ 2026" [ref=f1e557]
+            - cell [ref=f1e558]:
+              - generic [ref=f1e559]:
+                - button "संपादित करें" [ref=f1e560]
+                - button "प्रकाशित करें" [ref=f1e563]
+                - button "हटाएँ" [ref=f1e566]

@@ -1,0 +1,49 @@
+- generic [ref=e23]:
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - link "प्रतिमा Admin" [ref=e27] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e28]: प्रतिमा
+        - generic [ref=e29]: Admin
+      - generic [ref=e30]:
+        - generic "princeaditya2001@gmail.com" [ref=e31]
+        - button "लॉगआउट" [ref=e32]
+  - complementary [ref=e33]:
+    - navigation [ref=e34]:
+      - generic [ref=e35]:
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e40] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e44] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e48] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e55] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e60]: प्रतिमा Admin Portal
+  - main [ref=e61]:
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - heading "Dashboard" [level=1] [ref=e65]
+        - paragraph [ref=e66]: प्रतिमा एडमिन पोर्टल में आपका स्वागत है।
+      - generic [ref=e67]:
+        - link [ref=e68] [cursor=pointer]:
+          - /url: "#/admin/poems"
+          - heading "कविताएँ" [level=3] [ref=e72]
+          - paragraph [ref=e73]: कविताओं की सूची और प्रबंधन
+        - link [ref=e74] [cursor=pointer]:
+          - /url: "#/admin/stories"
+          - heading "कहानियाँ" [level=3] [ref=e78]
+          - paragraph [ref=e79]: कहानियों की सूची और प्रबंधन
+        - link [ref=e80] [cursor=pointer]:
+          - /url: "#/admin/categories"
+          - heading "श्रेणियाँ" [level=3] [ref=e85]
+          - paragraph [ref=e86]: श्रेणियों का प्रबंधन
+      - generic [ref=e87]:
+        - heading "आगामी फ़ीचर्स" [level=2] [ref=e88]
+        - list [ref=e89]:
+          - listitem [ref=e90]: कविताओं और कहानियों की संख्या (Phase 3H)
+          - listitem [ref=e91]: हाल की गतिविधि (Phase 3H)
+          - listitem [ref=e92]: त्वरित क्रियाएँ (Phase 3H)
+      - paragraph [ref=e94]: ✓ आप सफलतापूर्वक एडमिन के रूप में लॉगिन हैं।

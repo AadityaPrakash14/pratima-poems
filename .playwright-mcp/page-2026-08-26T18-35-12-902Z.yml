@@ -1,0 +1,103 @@
+- generic [ref=e23]:
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - link "प्रतिमा Admin" [ref=e27] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e28]: प्रतिमा
+        - generic [ref=e29]: Admin
+      - generic [ref=e30]:
+        - generic "princeaditya2001@gmail.com" [ref=e31]
+        - button "लॉगआउट" [ref=e32]
+  - complementary [ref=e33]:
+    - navigation [ref=e34]:
+      - generic [ref=e35]:
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e40] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e44] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e48] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e55] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e60]: प्रतिमा Admin Portal
+  - main [ref=e61]:
+    - generic [ref=e270]:
+      - link "कविताओं पर वापस" [ref=e271] [cursor=pointer]:
+        - /url: "#/admin/poems"
+      - generic [ref=e276]:
+        - heading "कविता संपादित करें" [level=1] [ref=e277]
+        - paragraph [ref=e278]: "ID: a9487cec-3ad9-4ef7-aa46-17b3eb40df40"
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - generic [ref=e284]: शीर्षक*
+            - textbox "शीर्षक" [ref=e285]:
+              - /placeholder: कविता का शीर्षक
+              - text: परीक्षण कविता
+          - generic [ref=e286]:
+            - generic [ref=e287]: उपशीर्षक
+            - textbox "उपशीर्षक" [ref=e288]:
+              - /placeholder: वैकल्पिक उपशीर्षक
+            - paragraph [ref=e289]: वैकल्पिक
+        - generic [ref=e290]:
+          - generic [ref=e291]: Slug*
+          - textbox "Slug" [ref=e293]:
+            - /placeholder: jaise-mera-slug
+          - paragraph [ref=e295]: URL में उपयोग होगा (केवल lowercase अक्षर, संख्याएँ, हाइफ़न)
+        - generic [ref=e296]:
+          - generic [ref=e297]: पाठ*
+          - textbox "पाठ" [ref=e298]:
+            - /placeholder: "कविता का पूरा पाठ यहाँ लिखें...\r\n\r\nहर पंक्ति के बीच\r\nकी जगह संरक्षित रहेगी।\r\n\r\nजैसे इस कविता में है।"
+            - text: यह एक परीक्षण कविता है पहली पंक्ति में स्वागत है दूसरी पंक्ति में प्रेम तीसरी पंक्ति में आशा चौथी पंक्ति में जीवन
+          - generic [ref=e299]:
+            - paragraph [ref=e301]: पंक्तियों के बीच की जगह संरक्षित रहेगी।
+            - generic [ref=e302]:
+              - generic [ref=e303]: 7 पंक्तियाँ
+              - generic [ref=e304]: •
+              - generic [ref=e305]: 115 अक्षर
+        - generic [ref=e306]:
+          - generic [ref=e307]: सारांश
+          - textbox "सारांश" [ref=e308]:
+            - /placeholder: कविता का संक्षिप्त सारांश (सूची में दिखेगा)
+          - paragraph [ref=e309]: वैकल्पिक - सूची पृष्ठ पर दिखाया जाएगा
+        - generic [ref=e310]:
+          - heading "अतिरिक्त जानकारी" [level=3] [ref=e311]
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - generic [ref=e314]: श्रेणी
+              - combobox "श्रेणी" [ref=e316]:
+                - option "कोई श्रेणी नहीं" [selected]
+              - paragraph [ref=e317]: वैकल्पिक
+            - generic [ref=e318]:
+              - generic [ref=e319]: लिखने की तिथि
+              - textbox "लिखने की तिथि" [ref=e320]
+              - paragraph [ref=e321]: वैकल्पिक - मूल रचना तिथि
+            - generic [ref=e322]:
+              - generic [ref=e323]: पढ़ने का समय (मिनट)
+              - spinbutton "पढ़ने का समय (मिनट)" [ref=e324]
+              - paragraph [ref=e325]: वैकल्पिक
+        - generic [ref=e326]:
+          - heading "मुखपृष्ठ सेटिंग्स" [level=3] [ref=e327]
+          - generic [ref=e329] [cursor=pointer]:
+            - checkbox "मुखपृष्ठ पर दिखाएँ" [ref=e330]
+            - generic [ref=e331]: मुखपृष्ठ पर दिखाएँ
+        - generic [ref=e332]:
+          - heading "पांडुलिपि छवि" [level=3] [ref=e333]
+          - generic [ref=e334]:
+            - generic [ref=e335]: पांडुलिपि अपलोड करें
+            - generic [ref=e336]:
+              - button "Choose File" [ref=e337]
+              - generic [ref=e339] [cursor=pointer]:
+                - paragraph [ref=e342]: फ़ाइल चुनें
+                - paragraph [ref=e343]: खींचकर छोड़ें या क्लिक करें
+                - paragraph [ref=e344]: "अधिकतम आकार: 10MB"
+              - paragraph [ref=e345]: मूल हस्तलिखित पांडुलिपि की स्कैन छवि (वैकल्पिक)
+            - paragraph [ref=e346]: ℹ️ फ़ाइल अपलोड करने से पहले slug दर्ज करना आवश्यक है।
+        - generic [ref=e347]:
+          - button "हटाएँ" [ref=e349] [cursor=pointer]
+          - generic [ref=e351]:
+            - button "रद्द करें" [ref=e352] [cursor=pointer]
+            - button "सहेजें" [ref=e354] [cursor=pointer]
+            - button "प्रकाशित करें" [ref=e356] [cursor=pointer]

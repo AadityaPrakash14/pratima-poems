@@ -1,0 +1,87 @@
+- generic [ref=e19]:
+  - banner [ref=e20]:
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - link "प्रतिमा" [ref=e23] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e24]:
+          - link "मुखपृष्ठ" [ref=e25] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e26] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e27] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e28] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e29]:
+    - generic [ref=e207]:
+      - generic [ref=e208]:
+        - heading "कविताएँ" [level=1] [ref=e209]
+        - paragraph [ref=e210]: शब्दों में संजोए हुए अनुभव...
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - generic [ref=e218]: कविताएँ खोजें
+          - generic [ref=e219]:
+            - textbox "कविताएँ खोजें" [disabled] [ref=e220]:
+              - /placeholder: कविताएँ खोजें...
+            - generic [ref=e221]: जल्द
+        - generic [ref=e222]:
+          - generic [ref=e223]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [disabled] [ref=e224]:
+            - option "श्रेणी" [selected]
+      - generic [ref=e225]:
+        - article [ref=e226]:
+          - generic [ref=e228]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e229]
+            - paragraph [ref=e230]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e231]: 2 मिनट पढ़ने का समय
+            - paragraph [ref=e233]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e234]:
+          - generic [ref=e236]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e237]
+            - paragraph [ref=e238]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e239]: 3 मिनट पढ़ने का समय
+            - paragraph [ref=e241]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e242]:
+          - generic [ref=e244]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e245]
+            - paragraph [ref=e246]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e247]: 2 मिनट पढ़ने का समय
+            - paragraph [ref=e249]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e250]:
+          - generic [ref=e252]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e253]
+            - paragraph [ref=e254]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e255]: 4 मिनट पढ़ने का समय
+            - paragraph [ref=e257]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e258]:
+          - generic [ref=e260]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e261]
+            - paragraph [ref=e262]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e263]: 2 मिनट पढ़ने का समय
+            - paragraph [ref=e265]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e266]:
+          - generic [ref=e268]:
+            - heading "[कविता का शीर्षक]" [level=3] [ref=e269]
+            - paragraph [ref=e270]: "[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e271]: 3 मिनट पढ़ने का समय
+            - paragraph [ref=e273]: "[यह प्लेसहोल्डर कार्ड है]"
+      - button "और कविताएँ देखें" [disabled] [ref=e275]
+  - contentinfo [ref=e180]:
+    - generic [ref=e182]:
+      - generic [ref=e189]:
+        - link "प्रतिमा" [ref=e190] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e191]: साहित्य संग्रह
+      - paragraph [ref=e193]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e194]:
+        - link "कविताएँ" [ref=e195] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e196] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e197] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e202]:
+        - paragraph [ref=e203]: © 2026 प्रतिमा
+        - paragraph [ref=e204]: सर्वाधिकार सुरक्षित
+      - generic [ref=e205]: ❧
