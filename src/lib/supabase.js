@@ -5,30 +5,48 @@ import { createClient } from '@supabase/supabase-js';
  * 
  * Environment variables:
  * - VITE_SUPABASE_URL: Your Supabase project URL
- * - VITE_SUPABASE_ANON_KEY: Your Supabase anonymous (public) key
+ * - VITE_SUPABASE_PUBLISHABLE_KEY: Your Supabase anonymous/publishable key
  * 
  * IMPORTANT: Never use the service role key in client-side code.
- * The anon key is safe to expose as Row Level Security (RLS) 
+ * The publishable key is safe to expose as Row Level Security (RLS) 
  * policies protect your data.
  */
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+
+/**
+ * Check if a URL is a valid HTTP/HTTPS URL
+ * @param {string} url - URL to validate
+ * @returns {boolean} True if valid HTTP/HTTPS URL
+ */
+function isValidUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+// Check if environment variables are properly configured
+const isConfigured = isValidUrl(supabaseUrl) && supabaseAnonKey && supabaseAnonKey.length > 20;
 
 // Validate environment variables
-if (!supabaseUrl || !supabaseAnonKey) {
+if (!isConfigured) {
   console.warn(
-    'Supabase environment variables are not set. ' +
-    'Please create a .env.local file with VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY. ' +
-    'Supabase features (likes, comments) will be disabled.'
+    'Supabase environment variables are not set or invalid. ' +
+    'Please create a .env.local file with valid VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY. ' +
+    'Supabase features will be disabled.'
   );
 }
 
 /**
  * Supabase client instance
- * Will be null if environment variables are not configured
+ * Will be null if environment variables are not configured properly
  */
-export const supabase = supabaseUrl && supabaseAnonKey
+export const supabase = isConfigured
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 

@@ -1,0 +1,3 @@
+- generic [ref=f2e5]:
+  - heading "प्रतिमा Admin" [level=1] [ref=f2e6]
+  - paragraph [ref=f2e7]: Supabase कॉन्फ़िगर नहीं है। कृपया .env.local फ़ाइल में VITE_SUPABASE_URL और VITE_SUPABASE_PUBLISHABLE_KEY सेट करें।
