@@ -1,0 +1,56 @@
+- generic [ref=e18]:
+  - banner [ref=e19]:
+    - navigation [ref=e20]:
+      - generic [ref=e21]:
+        - link "प्रतिमा" [ref=e22] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e23]:
+          - link "मुखपृष्ठ" [ref=e24] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e25] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e26] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e27] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e28]:
+    - generic [ref=e232]:
+      - link "← सभी कहानियाँ" [ref=e233] [cursor=pointer]:
+        - /url: "#/stories"
+      - generic [ref=e235]:
+        - generic [ref=e236]:
+          - paragraph [ref=e237]: कहानी
+          - heading "परीक्षण कहानी" [level=1] [ref=e238]
+          - paragraph [ref=e239]: सिस्टम परीक्षण
+          - paragraph [ref=e240]: — प्रतिमा
+        - generic [ref=e245]:
+          - generic [ref=e246]: परीक्षण श्रेणी
+          - generic [ref=e247]: •
+          - generic [ref=e248]: 3 मिनट पढ़ने का समय
+        - article [ref=e249]:
+          - generic [ref=e250]:
+            - paragraph [ref=e251]: यह पहली कहानी का पैराग्राफ है। इसमें कई वाक्य हैं जो एक पैराग्राफ बनाते हैं। यह परीक्षण के लिए लिखा गया है।
+            - paragraph [ref=e252]: यह दूसरी कहानी का पैराग्राफ है। यह भी काफी लंबा है और कई वाक्यों से बना है। परीक्षण के उद्देश्य से।
+            - paragraph [ref=e253]: यह तीसरा और अंतिम पैराग्राफ है। कहानी का समापन यहाँ होता है।
+        - generic [ref=e254]: ❦
+      - navigation "कहानी नेविगेशन" [ref=e256]:
+        - link "← सभी कहानियाँ" [ref=e257] [cursor=pointer]:
+          - /url: "#/stories"
+  - contentinfo [ref=e50]:
+    - generic [ref=e52]:
+      - generic [ref=e59]:
+        - link "प्रतिमा" [ref=e60] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e61]: साहित्य संग्रह
+      - paragraph [ref=e63]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e64]:
+        - link "कविताएँ" [ref=e65] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e66] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e67] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e72]:
+        - paragraph [ref=e73]: © 2026 प्रतिमा
+        - paragraph [ref=e74]: सर्वाधिकार सुरक्षित
+      - generic [ref=e75]: ❧

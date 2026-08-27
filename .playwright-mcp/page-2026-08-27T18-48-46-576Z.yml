@@ -1,0 +1,50 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - heading "कविताएँ" [level=1] [ref=e134]
+        - paragraph [ref=e135]: शब्दों में संजोए हुए अनुभव...
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: कविताएँ खोजें
+          - textbox "कविताएँ खोजें" [ref=e145]:
+            - /placeholder: कविताएँ खोजें...
+        - generic [ref=e146]:
+          - generic [ref=e147]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [ref=e148] [cursor=pointer]:
+            - option "सभी श्रेणियाँ" [selected]
+      - generic [ref=e149]:
+        - generic [ref=e150]: ❧
+        - paragraph [ref=e151]: कविताएँ लोड हो रही हैं...
+  - contentinfo [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e44]:
+        - link "प्रतिमा" [ref=e45] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e46]: साहित्य संग्रह
+      - paragraph [ref=e48]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e49]:
+        - link "कविताएँ" [ref=e50] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e51] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e52] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: © 2026 प्रतिमा
+        - paragraph [ref=e59]: सर्वाधिकार सुरक्षित
+      - generic [ref=e60]: ❧

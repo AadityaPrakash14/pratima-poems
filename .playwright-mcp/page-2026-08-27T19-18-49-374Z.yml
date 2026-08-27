@@ -1,0 +1,61 @@
+- generic [ref=e18]:
+  - banner [ref=e19]:
+    - navigation [ref=e20]:
+      - generic [ref=e21]:
+        - link "प्रतिमा" [ref=e22] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e23]:
+          - link "मुखपृष्ठ" [ref=e24] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e25] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e26] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e27] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e28]:
+    - generic [ref=e148]:
+      - link "← सभी कविताएँ" [ref=e149] [cursor=pointer]:
+        - /url: "#/poems"
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - paragraph [ref=e153]: कविता
+          - heading "परीक्षण कविता" [level=1] [ref=e154]
+          - paragraph [ref=e155]: सिस्टम परीक्षण
+          - paragraph [ref=e156]: — प्रतिमा
+        - generic [ref=e161]:
+          - generic [ref=e162]: परीक्षण श्रेणी
+          - generic [ref=e163]: •
+          - generic [ref=e164]: 2 मिनट पढ़ने का समय
+        - article [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - paragraph [ref=e168]: यह पहली पंक्ति है।
+              - paragraph [ref=e169]: यह दूसरी पंक्ति है।
+              - paragraph [ref=e170]: यह तीसरी पंक्ति है।
+            - generic [ref=e171]:
+              - paragraph [ref=e172]: यह दूसरा स्टेंज़ा है।
+              - paragraph [ref=e173]: जो कई पंक्तियों में है।
+              - paragraph [ref=e174]: परीक्षण के लिए।
+        - generic [ref=e175]: ❦
+      - navigation "कविता नेविगेशन" [ref=e177]:
+        - link "← सभी कविताएँ" [ref=e178] [cursor=pointer]:
+          - /url: "#/poems"
+  - contentinfo [ref=e50]:
+    - generic [ref=e52]:
+      - generic [ref=e59]:
+        - link "प्रतिमा" [ref=e60] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e61]: साहित्य संग्रह
+      - paragraph [ref=e63]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e64]:
+        - link "कविताएँ" [ref=e65] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e66] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e67] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e72]:
+        - paragraph [ref=e73]: © 2026 प्रतिमा
+        - paragraph [ref=e74]: सर्वाधिकार सुरक्षित
+      - generic [ref=e75]: ❧

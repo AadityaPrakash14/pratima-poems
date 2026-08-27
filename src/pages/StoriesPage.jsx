@@ -1,26 +1,58 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { StoryCard } from '../components/content';
 import { PublicLoadingState, PublicErrorState, PublicEmptyState } from '../components/common';
 import { getPublishedStories } from '../services/storyService';
+import { listCategories } from '../services/categoryService';
 import { isSupabaseConfigured } from '../lib/supabase';
 import { ServiceErrorCode } from '../services/serviceErrors';
 
 /**
  * StoriesPage - Listing page for all published stories
  * Editorial composition with the collection as focus
- * Search/filter UI is understated and currently disabled
+ * Features client-side search and server-side category filtering
  * 
- * Now connected to Supabase for published stories with proper loading, empty, and error states.
+ * Connected to Supabase for published stories with proper loading, empty, and error states.
  */
 export default function StoriesPage() {
   const [stories, setStories] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [retryCount, setRetryCount] = useState(0);
+  
+  // Search and filter state
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategoryId, setSelectedCategoryId] = useState('');
 
   // Check if Supabase is configured
   const supabaseReady = isSupabaseConfigured();
 
+  // Load categories on mount
+  useEffect(() => {
+    let mounted = true;
+
+    const loadCategories = async () => {
+      if (!supabaseReady) return;
+
+      try {
+        const data = await listCategories({ type: 'story' });
+        if (mounted) {
+          setCategories(data || []);
+        }
+      } catch (err) {
+        // Categories are optional - don't fail the page if they can't load
+        console.error('Error loading categories:', err);
+      }
+    };
+
+    loadCategories();
+
+    return () => {
+      mounted = false;
+    };
+  }, [supabaseReady]);
+
+  // Load stories (with category filter when selected)
   useEffect(() => {
     let mounted = true;
 
@@ -33,8 +65,11 @@ export default function StoriesPage() {
       try {
         setLoading(true);
         setError(null);
-        // Load more stories for listing page (up to 50)
-        const data = await getPublishedStories({ limit: 50 });
+        // Load stories with optional category filter
+        const data = await getPublishedStories({ 
+          limit: 50,
+          categoryId: selectedCategoryId || undefined
+        });
         if (mounted) {
           setStories(data || []);
         }
@@ -55,10 +90,34 @@ export default function StoriesPage() {
     return () => {
       mounted = false;
     };
-  }, [supabaseReady, retryCount]);
+  }, [supabaseReady, retryCount, selectedCategoryId]);
+
+  // Client-side search filtering
+  const filteredStories = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return stories;
+    }
+
+    const query = searchQuery.trim().toLowerCase();
+    return stories.filter(story => {
+      const titleMatch = story.title?.toLowerCase().includes(query);
+      const excerptMatch = story.excerpt?.toLowerCase().includes(query);
+      const contentMatch = story.content?.toLowerCase().includes(query);
+      return titleMatch || excerptMatch || contentMatch;
+    });
+  }, [stories, searchQuery]);
 
   // Retry handler
   const handleRetry = () => setRetryCount(c => c + 1);
+
+  // Reset filters handler
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setSelectedCategoryId('');
+  };
+
+  // Check if any filters are active
+  const hasActiveFilters = searchQuery.trim() !== '' || selectedCategoryId !== '';
 
   // Render content based on state
   const renderContent = () => {
@@ -88,7 +147,8 @@ export default function StoriesPage() {
       );
     }
 
-    if (stories.length === 0) {
+    // No stories at all (no filters active)
+    if (stories.length === 0 && !hasActiveFilters) {
       return (
         <PublicEmptyState 
           title="अभी कोई कहानी नहीं है"
@@ -98,11 +158,46 @@ export default function StoriesPage() {
       );
     }
 
+    // No results after filtering
+    if (filteredStories.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center py-16 md:py-24 text-center">
+          <div className="mb-6" aria-hidden="true">
+            <span 
+              className="font-literary text-5xl"
+              style={{ color: 'var(--color-border)', opacity: 0.5 }}
+            >
+              ✧
+            </span>
+          </div>
+          <h3 
+            className="font-literary text-xl md:text-2xl font-semibold mb-3"
+            style={{ color: 'var(--color-ink-soft)' }}
+          >
+            कोई परिणाम नहीं मिला
+          </h3>
+          <p 
+            className="font-body text-base max-w-md mb-6"
+            style={{ color: 'var(--color-muted)' }}
+          >
+            आपकी खोज से मेल खाती कोई कहानी नहीं मिली।
+          </p>
+          <button
+            onClick={handleResetFilters}
+            className="font-body text-sm font-medium transition-colors"
+            style={{ color: 'var(--color-maroon)' }}
+          >
+            फ़िल्टर हटाएँ →
+          </button>
+        </div>
+      );
+    }
+
     return (
       <>
         {/* Stories Grid - Collection with breathing room */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-          {stories.map((story) => (
+          {filteredStories.map((story) => (
             <StoryCard 
               key={story.id}
               slug={story.slug}
@@ -116,7 +211,7 @@ export default function StoriesPage() {
         </div>
 
         {/* Load More - placeholder for future pagination */}
-        {stories.length >= 50 && (
+        {filteredStories.length >= 50 && (
           <div className="text-center mt-16 md:mt-20">
             <button
               disabled
@@ -173,10 +268,10 @@ export default function StoriesPage() {
           </div>
         </header>
 
-        {/* Search/Filter UI - Understated, disabled for now */}
+        {/* Search/Filter UI - Functional search and category filter */}
         <div className="max-w-2xl mx-auto mb-12 md:mb-16">
           <div className="flex flex-col sm:flex-row gap-3">
-            {/* Search Input Placeholder */}
+            {/* Search Input */}
             <div className="flex-1">
               <label htmlFor="search" className="sr-only">कहानियाँ खोजें</label>
               <div className="relative">
@@ -184,7 +279,8 @@ export default function StoriesPage() {
                   type="text"
                   id="search"
                   placeholder="कहानियाँ खोजें..."
-                  disabled
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-md font-body text-base"
                   style={{ 
                     backgroundColor: 'var(--color-paper-light)',
@@ -192,29 +288,39 @@ export default function StoriesPage() {
                     color: 'var(--color-ink)'
                   }}
                 />
-                <span 
-                  className="absolute right-3 top-1/2 -translate-y-1/2 font-body text-xs"
-                  style={{ color: 'var(--color-muted)' }}
-                >
-                  जल्द
-                </span>
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 font-body text-xs transition-colors"
+                    style={{ color: 'var(--color-muted)' }}
+                    aria-label="खोज साफ़ करें"
+                  >
+                    ✕
+                  </button>
+                )}
               </div>
             </div>
 
-            {/* Category Filter Placeholder */}
-            <div className="sm:w-40">
+            {/* Category Filter */}
+            <div className="sm:w-48">
               <label htmlFor="category" className="sr-only">श्रेणी चुनें</label>
               <select
                 id="category"
-                disabled
-                className="w-full px-4 py-2.5 rounded-md font-body text-base appearance-none"
+                value={selectedCategoryId}
+                onChange={(e) => setSelectedCategoryId(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-md font-body text-base appearance-none cursor-pointer"
                 style={{ 
                   backgroundColor: 'var(--color-paper-light)',
                   border: '1px solid var(--color-border)',
-                  color: 'var(--color-muted)'
+                  color: selectedCategoryId ? 'var(--color-ink)' : 'var(--color-muted)'
                 }}
               >
-                <option>श्रेणी</option>
+                <option value="">सभी श्रेणियाँ</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

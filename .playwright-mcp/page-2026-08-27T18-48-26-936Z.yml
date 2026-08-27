@@ -1,0 +1,55 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e104]:
+      - link "← सभी कविताएँ" [ref=e105] [cursor=pointer]:
+        - /url: "#/poems"
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - paragraph [ref=e109]: कविता
+          - heading "topic" [level=1] [ref=e110]
+          - paragraph [ref=e111]: tempor
+          - paragraph [ref=e112]: — प्रतिमा
+        - generic [ref=e117]:
+          - generic [ref=e118]: nature
+          - generic [ref=e119]: •
+          - generic [ref=e120]: 6 अगस्त 2026
+          - generic [ref=e121]: •
+          - generic [ref=e122]: 1 मिनट पढ़ने का समय
+        - article [ref=e123]:
+          - paragraph [ref=e126]: kaise hai aaplog
+        - generic [ref=e127]: ❦
+      - navigation "कविता नेविगेशन" [ref=e129]:
+        - link "← सभी कविताएँ" [ref=e130] [cursor=pointer]:
+          - /url: "#/poems"
+  - contentinfo [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e44]:
+        - link "प्रतिमा" [ref=e45] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e46]: साहित्य संग्रह
+      - paragraph [ref=e48]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e49]:
+        - link "कविताएँ" [ref=e50] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e51] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e52] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: © 2026 प्रतिमा
+        - paragraph [ref=e59]: सर्वाधिकार सुरक्षित
+      - generic [ref=e60]: ❧
