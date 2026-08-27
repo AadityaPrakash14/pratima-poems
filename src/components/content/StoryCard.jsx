@@ -5,13 +5,23 @@ import { Link } from 'react-router-dom';
  * Designed as elegant literary collection cards with cover image area
  * Features warm paper surface, generous whitespace, literary feel
  * No engagement features (likes/comments) at this stage
+ * 
+ * Props:
+ * - slug: URL-friendly identifier for linking (required for real content)
+ * - title: Story title in Hindi
+ * - excerpt: Short preview text
+ * - readingTime: Estimated reading time in minutes (reading_time from DB)
+ * - coverUrl: URL to cover image (cover_url from DB)
+ * - category: Category object with name (optional)
+ * - isPlaceholder: If true, renders as non-clickable placeholder
  */
 export default function StoryCard({ 
-  id,
+  slug,
   title, 
   excerpt, 
   readingTime,
-  coverImage,
+  coverUrl,
+  category,
   isPlaceholder = false,
   className = '' 
 }) {
@@ -24,10 +34,10 @@ export default function StoryCard({
         className="aspect-[16/10] flex items-center justify-center relative"
         style={{ backgroundColor: 'var(--color-paper-deep)' }}
       >
-        {coverImage ? (
+        {coverUrl ? (
           <>
             <img 
-              src={coverImage} 
+              src={coverUrl} 
               alt={`${title} का कवर चित्र`}
               className="w-full h-full object-cover"
             />
@@ -84,15 +94,28 @@ export default function StoryCard({
         </p>
         
         {/* Footer metadata - subtle, unobtrusive */}
-        <div className="flex items-center justify-between">
-          {readingTime && (
-            <span 
-              className="font-body text-sm"
-              style={{ color: 'var(--color-muted)' }}
-            >
-              {readingTime} मिनट पढ़ने का समय
-            </span>
-          )}
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-3">
+            {category?.name && (
+              <span 
+                className="font-body text-xs px-2 py-0.5 rounded"
+                style={{ 
+                  backgroundColor: 'var(--color-paper-deep)',
+                  color: 'var(--color-ink-soft)'
+                }}
+              >
+                {category.name}
+              </span>
+            )}
+            {readingTime && (
+              <span 
+                className="font-body text-sm"
+                style={{ color: 'var(--color-muted)' }}
+              >
+                {readingTime} मिनट
+              </span>
+            )}
+          </div>
 
           {/* Read more indicator */}
           {!isPlaceholder && (
@@ -119,14 +142,14 @@ export default function StoryCard({
   );
 
   // If placeholder, don't wrap in link
-  if (isPlaceholder || !id) {
+  if (isPlaceholder || !slug) {
     return cardContent;
   }
 
-  // Wrap in link for real content
+  // Wrap in link for real content - using slug for URL
   return (
     <Link 
-      to={`/stories/${id}`}
+      to={`/stories/${slug}`}
       className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-lg"
       style={{ '--tw-ring-color': 'var(--color-maroon)' }}
     >

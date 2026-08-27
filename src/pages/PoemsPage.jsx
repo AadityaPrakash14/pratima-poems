@@ -1,56 +1,138 @@
+import { useState, useEffect } from 'react';
 import { PoemCard } from '../components/content';
+import { PublicLoadingState, PublicErrorState, PublicEmptyState } from '../components/common';
+import { getPublishedPoems } from '../services/poemService';
+import { isSupabaseConfigured } from '../lib/supabase';
+import { ServiceErrorCode } from '../services/serviceErrors';
 
 /**
- * PoemsPage - Listing page for all poems
+ * PoemsPage - Listing page for all published poems
  * Editorial composition with the collection as focus
- * Search/filter UI is understated
+ * Search/filter UI is understated and currently disabled
+ * 
+ * Now connected to Supabase for published poems with proper loading, empty, and error states.
  */
 export default function PoemsPage() {
-  // Placeholder poem data - clearly marked as not real content
-  const placeholderPoems = [
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 2,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 3,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 2,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 4,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 2,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कविता का शीर्षक]',
-      excerpt: '[यहाँ कविता का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 3,
-      isPlaceholder: true
-    },
-  ];
+  const [poems, setPoems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  // Check if Supabase is configured
+  const supabaseReady = isSupabaseConfigured();
+
+  useEffect(() => {
+    let mounted = true;
+
+    const loadPoems = async () => {
+      if (!supabaseReady) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+        // Load more poems for listing page (up to 50)
+        const data = await getPublishedPoems({ limit: 50 });
+        if (mounted) {
+          setPoems(data || []);
+        }
+      } catch (err) {
+        console.error('Error loading poems:', err);
+        if (mounted) {
+          setError(err);
+        }
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    loadPoems();
+
+    return () => {
+      mounted = false;
+    };
+  }, [supabaseReady, retryCount]);
+
+  // Retry handler
+  const handleRetry = () => setRetryCount(c => c + 1);
+
+  // Render content based on state
+  const renderContent = () => {
+    if (!supabaseReady) {
+      return (
+        <PublicEmptyState 
+          title="कविताएँ जल्द आ रही हैं"
+          message="अभी सिस्टम कॉन्फ़िगर हो रहा है।"
+          showHomeLink={true}
+        />
+      );
+    }
+
+    if (loading) {
+      return <PublicLoadingState message="कविताएँ लोड हो रही हैं..." />;
+    }
+
+    if (error) {
+      const isNotConfigured = error.code === ServiceErrorCode.NOT_CONFIGURED;
+      return (
+        <PublicErrorState
+          title={isNotConfigured ? 'सिस्टम कॉन्फ़िगर नहीं है' : 'कविताएँ लोड नहीं हो सकीं'}
+          message={isNotConfigured ? 'कृपया बाद में पुनः प्रयास करें।' : 'कृपया पुनः प्रयास करें।'}
+          onRetry={!isNotConfigured ? handleRetry : undefined}
+          showHomeLink={true}
+        />
+      );
+    }
+
+    if (poems.length === 0) {
+      return (
+        <PublicEmptyState 
+          title="अभी कोई कविता नहीं है"
+          message="नई कविताएँ जल्द ही यहाँ प्रकाशित होंगी।"
+          showHomeLink={true}
+        />
+      );
+    }
+
+    return (
+      <>
+        {/* Poems Grid - Collection with breathing room */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {poems.map((poem) => (
+            <PoemCard 
+              key={poem.id}
+              slug={poem.slug}
+              title={poem.title}
+              excerpt={poem.excerpt}
+              readingTime={poem.reading_time}
+              category={poem.category}
+            />
+          ))}
+        </div>
+
+        {/* Load More - placeholder for future pagination */}
+        {poems.length >= 50 && (
+          <div className="text-center mt-16 md:mt-20">
+            <button
+              disabled
+              className="px-8 py-3 rounded-md font-body text-base transition-colors"
+              style={{ 
+                backgroundColor: 'transparent',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-muted)'
+              }}
+            >
+              और कविताएँ देखें
+            </button>
+          </div>
+        )}
+      </>
+    );
+  };
 
   return (
     <div className="py-16 md:py-24">
@@ -90,7 +172,7 @@ export default function PoemsPage() {
           </div>
         </header>
 
-        {/* Search/Filter UI - Understated, not dominant */}
+        {/* Search/Filter UI - Understated, disabled for now */}
         <div className="max-w-2xl mx-auto mb-12 md:mb-16">
           <div className="flex flex-col sm:flex-row gap-3">
             {/* Search Input Placeholder */}
@@ -137,30 +219,8 @@ export default function PoemsPage() {
           </div>
         </div>
 
-        {/* Poems Grid - Collection with breathing room */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {placeholderPoems.map((poem, index) => (
-            <PoemCard 
-              key={index}
-              {...poem}
-            />
-          ))}
-        </div>
-
-        {/* Load More Placeholder */}
-        <div className="text-center mt-16 md:mt-20">
-          <button
-            disabled
-            className="px-8 py-3 rounded-md font-body text-base transition-colors"
-            style={{ 
-              backgroundColor: 'transparent',
-              border: '1px solid var(--color-border)',
-              color: 'var(--color-muted)'
-            }}
-          >
-            और कविताएँ देखें
-          </button>
-        </div>
+        {/* Dynamic Content */}
+        {renderContent()}
       </div>
     </div>
   );

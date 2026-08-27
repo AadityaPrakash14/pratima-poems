@@ -1,0 +1,40 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e203]:
+      - link "← सभी कविताएँ" [ref=e204] [cursor=pointer]:
+        - /url: "#/poems"
+      - generic [ref=e205]:
+        - generic [ref=e206]: ❧
+        - paragraph [ref=e207]: कविता लोड हो रही है...
+  - contentinfo [ref=e114]:
+    - generic [ref=e116]:
+      - generic [ref=e123]:
+        - link "प्रतिमा" [ref=e124] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e125]: साहित्य संग्रह
+      - paragraph [ref=e127]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e128]:
+        - link "कविताएँ" [ref=e129] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e130] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e131] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: © 2026 प्रतिमा
+        - paragraph [ref=e138]: सर्वाधिकार सुरक्षित
+      - generic [ref=e139]: ❧

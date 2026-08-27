@@ -1,0 +1,63 @@
+- generic [ref=e10]:
+  - banner [ref=e11]:
+    - generic [ref=e12]:
+      - link "प्रतिमा Admin" [ref=e14] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e15]: प्रतिमा
+        - generic [ref=e16]: Admin
+      - generic [ref=e17]:
+        - generic "princeaditya2001@gmail.com" [ref=e18]
+        - button "लॉगआउट" [ref=e19]
+  - complementary [ref=e20]:
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - link "Dashboard" [ref=e23] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e27] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e31] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e35] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e42] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e47]: प्रतिमा Admin Portal
+  - main [ref=e48]:
+    - generic [ref=e912]:
+      - generic [ref=e914]:
+        - generic [ref=e915]:
+          - heading "कविताएँ" [level=1] [ref=e916]
+          - paragraph [ref=e917]: सभी कविताओं का प्रबंधन करें
+        - button [ref=e918]
+      - generic [ref=e923]:
+        - combobox [ref=e927]:
+          - option "सभी स्थिति" [selected]
+          - option "सभी स्थिति"
+          - option "ड्राफ़्ट"
+          - option "प्रकाशित"
+          - option "संग्रहित"
+        - combobox [ref=e931]:
+          - option "सभी श्रेणियाँ" [selected]
+          - option "सभी श्रेणियाँ"
+        - generic [ref=e938]: 1 कविता
+      - table [ref=e941]:
+        - rowgroup [ref=e942]:
+          - row [ref=e943]:
+            - columnheader "शीर्षक" [ref=e944]
+            - columnheader "स्थिति" [ref=e945]
+            - columnheader "श्रेणी" [ref=e946]
+            - columnheader "मुखपृष्ठ" [ref=e947]
+            - columnheader "अपडेट" [ref=e948]
+            - columnheader "क्रियाएँ" [ref=e949]
+        - rowgroup [ref=e950]:
+          - row [ref=e951] [cursor=pointer]:
+            - cell "परीक्षण कविता" [ref=e952]
+            - cell "ड्राफ़्ट" [ref=e955]
+            - cell "—" [ref=e959]
+            - cell "—" [ref=e960]
+            - cell "27 अग॰ 2026" [ref=e961]
+            - cell [ref=e962]:
+              - generic [ref=e963]:
+                - button "संपादित करें" [ref=e964]
+                - button "प्रकाशित करें" [ref=e967]
+                - button "हटाएँ" [ref=e970]

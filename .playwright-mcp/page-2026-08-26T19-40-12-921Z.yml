@@ -1,0 +1,46 @@
+- generic [ref=e10]:
+  - banner [ref=e11]:
+    - generic [ref=e12]:
+      - link "प्रतिमा Admin" [ref=e14] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e15]: प्रतिमा
+        - generic [ref=e16]: Admin
+      - generic [ref=e17]:
+        - generic "princeaditya2001@gmail.com" [ref=e18]
+        - button "लॉगआउट" [ref=e19]
+  - complementary [ref=e20]:
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - link "Dashboard" [ref=e23] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e27] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e31] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e35] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e42] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e47]: प्रतिमा Admin Portal
+  - main [ref=e48]:
+    - generic [ref=e552]:
+      - generic [ref=e554]:
+        - generic [ref=e555]:
+          - heading "कहानियाँ" [level=1] [ref=e556]
+          - paragraph [ref=e557]: सभी कहानियों का प्रबंधन करें
+        - button [ref=e558]
+      - generic [ref=e563]:
+        - combobox [ref=e567]:
+          - option "सभी स्थिति" [selected]
+          - option "सभी स्थिति"
+          - option "ड्राफ़्ट"
+          - option "प्रकाशित"
+          - option "संग्रहित"
+        - combobox [ref=e571]:
+          - option "सभी श्रेणियाँ" [selected]
+          - option "सभी श्रेणियाँ"
+        - generic [ref=e572]: 0 कहानियाँ
+      - generic [ref=e573]:
+        - heading "कोई कहानी नहीं है" [level=3] [ref=e577]
+        - paragraph [ref=e578]: अभी तक कोई कहानी नहीं बनाई गई है। नई कहानी बनाने के लिए "नई कहानी" बटन पर क्लिक करें।
+        - button "नई कहानी बनाएँ" [ref=e579]

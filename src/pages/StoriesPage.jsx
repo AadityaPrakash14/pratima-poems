@@ -1,42 +1,139 @@
+import { useState, useEffect } from 'react';
 import { StoryCard } from '../components/content';
+import { PublicLoadingState, PublicErrorState, PublicEmptyState } from '../components/common';
+import { getPublishedStories } from '../services/storyService';
+import { isSupabaseConfigured } from '../lib/supabase';
+import { ServiceErrorCode } from '../services/serviceErrors';
 
 /**
- * StoriesPage - Listing page for all stories
+ * StoriesPage - Listing page for all published stories
  * Editorial composition with the collection as focus
- * Search/filter UI is understated
+ * Search/filter UI is understated and currently disabled
+ * 
+ * Now connected to Supabase for published stories with proper loading, empty, and error states.
  */
 export default function StoriesPage() {
-  // Placeholder story data - clearly marked as not real content
-  const placeholderStories = [
-    {
-      id: null,
-      title: '[कहानी का शीर्षक]',
-      excerpt: '[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 10,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कहानी का शीर्षक]',
-      excerpt: '[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 15,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कहानी का शीर्षक]',
-      excerpt: '[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 12,
-      isPlaceholder: true
-    },
-    {
-      id: null,
-      title: '[कहानी का शीर्षक]',
-      excerpt: '[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]',
-      readingTime: 8,
-      isPlaceholder: true
-    },
-  ];
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
+
+  // Check if Supabase is configured
+  const supabaseReady = isSupabaseConfigured();
+
+  useEffect(() => {
+    let mounted = true;
+
+    const loadStories = async () => {
+      if (!supabaseReady) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+        // Load more stories for listing page (up to 50)
+        const data = await getPublishedStories({ limit: 50 });
+        if (mounted) {
+          setStories(data || []);
+        }
+      } catch (err) {
+        console.error('Error loading stories:', err);
+        if (mounted) {
+          setError(err);
+        }
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    loadStories();
+
+    return () => {
+      mounted = false;
+    };
+  }, [supabaseReady, retryCount]);
+
+  // Retry handler
+  const handleRetry = () => setRetryCount(c => c + 1);
+
+  // Render content based on state
+  const renderContent = () => {
+    if (!supabaseReady) {
+      return (
+        <PublicEmptyState 
+          title="कहानियाँ जल्द आ रही हैं"
+          message="अभी सिस्टम कॉन्फ़िगर हो रहा है।"
+          showHomeLink={true}
+        />
+      );
+    }
+
+    if (loading) {
+      return <PublicLoadingState message="कहानियाँ लोड हो रही हैं..." />;
+    }
+
+    if (error) {
+      const isNotConfigured = error.code === ServiceErrorCode.NOT_CONFIGURED;
+      return (
+        <PublicErrorState
+          title={isNotConfigured ? 'सिस्टम कॉन्फ़िगर नहीं है' : 'कहानियाँ लोड नहीं हो सकीं'}
+          message={isNotConfigured ? 'कृपया बाद में पुनः प्रयास करें।' : 'कृपया पुनः प्रयास करें।'}
+          onRetry={!isNotConfigured ? handleRetry : undefined}
+          showHomeLink={true}
+        />
+      );
+    }
+
+    if (stories.length === 0) {
+      return (
+        <PublicEmptyState 
+          title="अभी कोई कहानी नहीं है"
+          message="नई कहानियाँ जल्द ही यहाँ प्रकाशित होंगी।"
+          showHomeLink={true}
+        />
+      );
+    }
+
+    return (
+      <>
+        {/* Stories Grid - Collection with breathing room */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          {stories.map((story) => (
+            <StoryCard 
+              key={story.id}
+              slug={story.slug}
+              title={story.title}
+              excerpt={story.excerpt}
+              readingTime={story.reading_time}
+              coverUrl={story.cover_url}
+              category={story.category}
+            />
+          ))}
+        </div>
+
+        {/* Load More - placeholder for future pagination */}
+        {stories.length >= 50 && (
+          <div className="text-center mt-16 md:mt-20">
+            <button
+              disabled
+              className="px-8 py-3 rounded-md font-body text-base transition-colors"
+              style={{ 
+                backgroundColor: 'transparent',
+                border: '1px solid var(--color-border)',
+                color: 'var(--color-muted)'
+              }}
+            >
+              और कहानियाँ देखें
+            </button>
+          </div>
+        )}
+      </>
+    );
+  };
 
   return (
     <div className="py-16 md:py-24">
@@ -76,7 +173,7 @@ export default function StoriesPage() {
           </div>
         </header>
 
-        {/* Search/Filter UI - Understated, not dominant */}
+        {/* Search/Filter UI - Understated, disabled for now */}
         <div className="max-w-2xl mx-auto mb-12 md:mb-16">
           <div className="flex flex-col sm:flex-row gap-3">
             {/* Search Input Placeholder */}
@@ -123,30 +220,8 @@ export default function StoriesPage() {
           </div>
         </div>
 
-        {/* Stories Grid - Collection with breathing room */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-          {placeholderStories.map((story, index) => (
-            <StoryCard 
-              key={index}
-              {...story}
-            />
-          ))}
-        </div>
-
-        {/* Load More Placeholder */}
-        <div className="text-center mt-16 md:mt-20">
-          <button
-            disabled
-            className="px-8 py-3 rounded-md font-body text-base transition-colors"
-            style={{ 
-              backgroundColor: 'transparent',
-              border: '1px solid var(--color-border)',
-              color: 'var(--color-muted)'
-            }}
-          >
-            और कहानियाँ देखें
-          </button>
-        </div>
+        {/* Dynamic Content */}
+        {renderContent()}
       </div>
     </div>
   );
