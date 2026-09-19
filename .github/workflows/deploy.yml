@@ -64,11 +64,18 @@ jobs:
       - name: Verify Supabase config in build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
         run: |
           if grep -rFq "$VITE_SUPABASE_URL" dist/; then
             echo "Supabase URL found in production build"
           else
             echo "::error::Supabase URL was not found in production build"
+            exit 1
+          fi
+          if grep -rFq "$VITE_SUPABASE_PUBLISHABLE_KEY" dist/; then
+            echo "Supabase publishable key found in production build"
+          else
+            echo "::error::Supabase publishable key was not found in production build"
             exit 1
           fi
 
