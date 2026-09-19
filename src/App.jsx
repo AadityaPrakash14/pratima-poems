@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import AdminLayout from './layouts/AdminLayout';
 import ScrollToTop from './components/ScrollToTop';
@@ -24,8 +24,9 @@ import {
 } from './pages/admin';
 
 /**
- * App - Root application component with HashRouter for GitHub Pages compatibility
- * Uses hash routing (/#/path) to work correctly with static hosting
+ * App - Root application component with BrowserRouter for clean URLs
+ * Uses the 404.html fallback technique for GitHub Pages SPA support
+ * The basename must match the Vite base path for GitHub Pages subpath deployment
  * ScrollToTop ensures pages start at scroll position 0 on navigation
  * 
  * Route Structure:
@@ -35,7 +36,7 @@ import {
 function App() {
   return (
     <AuthProvider>
-      <HashRouter>
+      <BrowserRouter basename="/pratima-poems">
         <ScrollToTop />
         <Routes>
           {/* Public routes wrapped in MainLayout */}
@@ -82,7 +83,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
