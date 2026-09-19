@@ -1,0 +1,34 @@
+- generic [ref=e10]:
+  - banner [ref=e11]:
+    - generic [ref=e12]:
+      - link "प्रतिमा Admin" [ref=e14] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e15]: प्रतिमा
+        - generic [ref=e16]: Admin
+      - generic [ref=e17]:
+        - generic "princeaditya2001@gmail.com" [ref=e18]
+        - button "लॉगआउट" [ref=e19]
+  - complementary [ref=e20]:
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - link "Dashboard" [ref=e23] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e27] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e31] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e35] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e42] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e47]: प्रतिमा Admin Portal
+  - main [ref=e48]:
+    - generic [ref=e1007]:
+      - generic [ref=e1009]:
+        - generic [ref=e1010]:
+          - heading "श्रेणियाँ" [level=1] [ref=e1011]
+          - paragraph [ref=e1012]: कविताओं और कहानियों की श्रेणियाँ प्रबंधित करें
+        - button [ref=e1013]
+      - status [ref=e1018]:
+        - paragraph [ref=e1022]: श्रेणियाँ लोड हो रही हैं...
+        - generic [ref=e1023]: श्रेणियाँ लोड हो रही हैं...

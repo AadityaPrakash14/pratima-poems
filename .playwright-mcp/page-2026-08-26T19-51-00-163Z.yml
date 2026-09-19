@@ -1,0 +1,70 @@
+- generic [ref=e1351]:
+  - banner [ref=e1352]:
+    - generic [ref=e1353]:
+      - link "प्रतिमा Admin" [ref=e1355] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e1356]: प्रतिमा
+        - generic [ref=e1357]: Admin
+      - generic [ref=e1358]:
+        - generic "princeaditya2001@gmail.com" [ref=e1359]
+        - button "लॉगआउट" [ref=e1360]
+  - complementary [ref=e1361]:
+    - navigation [ref=e1362]:
+      - generic [ref=e1363]:
+        - link "Dashboard" [ref=e1364] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e1368] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e1372] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e1376] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e1383] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e1388]: प्रतिमा Admin Portal
+  - main [ref=e1389]:
+    - generic [ref=e1391]:
+      - generic [ref=e1393]:
+        - generic [ref=e1394]:
+          - heading "कविताएँ" [level=1] [ref=e1395]
+          - paragraph [ref=e1396]: सभी कविताओं का प्रबंधन करें
+        - button [ref=e1397]
+      - generic [ref=e1402]:
+        - combobox [ref=e1406]:
+          - option "सभी स्थिति" [selected]
+          - option "सभी स्थिति"
+          - option "ड्राफ़्ट"
+          - option "प्रकाशित"
+          - option "संग्रहित"
+        - combobox [ref=e1410]:
+          - option "सभी श्रेणियाँ" [selected]
+          - option "सभी श्रेणियाँ"
+        - generic [ref=e1417]: 1 कविता
+      - table [ref=e1420]:
+        - rowgroup [ref=e1421]:
+          - row [ref=e1422]:
+            - columnheader "शीर्षक" [ref=e1423]
+            - columnheader "स्थिति" [ref=e1424]
+            - columnheader "श्रेणी" [ref=e1425]
+            - columnheader "मुखपृष्ठ" [ref=e1426]
+            - columnheader "अपडेट" [ref=e1427]
+            - columnheader "क्रियाएँ" [ref=e1428]
+        - rowgroup [ref=e1429]:
+          - row [ref=e1430] [cursor=pointer]:
+            - cell "परीक्षण कविता" [ref=e1431]
+            - cell "ड्राफ़्ट" [ref=e1434]
+            - cell "—" [ref=e1438]
+            - cell "—" [ref=e1439]
+            - cell "27 अग॰ 2026" [ref=e1440]
+            - cell [ref=e1441]:
+              - generic [ref=e1442]:
+                - button "संपादित करें" [ref=e1443]
+                - button "प्रकाशित करें" [ref=e1446]
+                - button "हटाएँ" [ref=e1449]
+      - dialog [ref=e1452]:
+        - generic [ref=e1454]:
+          - heading "कविता हटाएँ?" [level=2] [ref=e1456]
+          - paragraph [ref=e1458]: क्या आप "परीक्षण कविता" कविता को हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।
+          - generic [ref=e1459]:
+            - button "रद्द करें" [active] [ref=e1460]
+            - button "हटाएँ" [ref=e1461]

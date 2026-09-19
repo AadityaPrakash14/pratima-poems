@@ -1,0 +1,52 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - heading "कविताएँ" [level=1] [ref=e151]
+        - paragraph [ref=e152]: शब्दों में संजोए हुए अनुभव...
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - generic [ref=e160]: कविताएँ खोजें
+          - generic [ref=e161]:
+            - textbox "कविताएँ खोजें" [disabled] [ref=e162]:
+              - /placeholder: कविताएँ खोजें...
+            - generic [ref=e163]: जल्द
+        - generic [ref=e164]:
+          - generic [ref=e165]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [disabled] [ref=e166]:
+            - option "श्रेणी" [selected]
+      - generic [ref=e167]:
+        - generic [ref=e168]: ❧
+        - paragraph [ref=e169]: कविताएँ लोड हो रही हैं...
+  - contentinfo [ref=e114]:
+    - generic [ref=e116]:
+      - generic [ref=e123]:
+        - link "प्रतिमा" [ref=e124] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e125]: साहित्य संग्रह
+      - paragraph [ref=e127]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e128]:
+        - link "कविताएँ" [ref=e129] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e130] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e131] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: © 2026 प्रतिमा
+        - paragraph [ref=e138]: सर्वाधिकार सुरक्षित
+      - generic [ref=e139]: ❧

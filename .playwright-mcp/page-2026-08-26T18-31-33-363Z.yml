@@ -1,0 +1,46 @@
+- generic [ref=e23]:
+  - banner [ref=e24]:
+    - generic [ref=e25]:
+      - link "प्रतिमा Admin" [ref=e27] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e28]: प्रतिमा
+        - generic [ref=e29]: Admin
+      - generic [ref=e30]:
+        - generic "princeaditya2001@gmail.com" [ref=e31]
+        - button "लॉगआउट" [ref=e32]
+  - complementary [ref=e33]:
+    - navigation [ref=e34]:
+      - generic [ref=e35]:
+        - link "Dashboard" [ref=e36] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [active] [ref=e40] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e44] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e48] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e55] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e60]: प्रतिमा Admin Portal
+  - main [ref=e61]:
+    - generic [ref=e95]:
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - heading "कविताएँ" [level=1] [ref=e99]
+          - paragraph [ref=e100]: सभी कविताओं का प्रबंधन करें
+        - button [ref=e101]
+      - generic [ref=e106]:
+        - combobox [ref=e110]:
+          - option "सभी स्थिति" [selected]
+          - option "सभी स्थिति"
+          - option "ड्राफ़्ट"
+          - option "प्रकाशित"
+          - option "संग्रहित"
+        - combobox [ref=e114]:
+          - option "सभी श्रेणियाँ" [selected]
+          - option "सभी श्रेणियाँ"
+        - generic [ref=e115]: 0 कविताएँ
+      - generic [ref=e116]:
+        - heading "कोई कविता नहीं है" [level=3] [ref=e120]
+        - paragraph [ref=e121]: अभी तक कोई कविता नहीं बनाई गई है। नई कविता बनाने के लिए "नई कविता" बटन पर क्लिक करें।
+        - button "नई कविता बनाएँ" [ref=e122]

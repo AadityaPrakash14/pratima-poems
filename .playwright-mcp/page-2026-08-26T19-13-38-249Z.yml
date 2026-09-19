@@ -1,0 +1,87 @@
+- generic [ref=f1e832]:
+  - banner [ref=f1e833]:
+    - navigation [ref=f1e834]:
+      - generic [ref=f1e835]:
+        - link "प्रतिमा" [ref=f1e836] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=f1e837]:
+          - link "मुखपृष्ठ" [ref=f1e838] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=f1e839] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=f1e840] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=f1e841] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=f1e842]:
+    - generic [ref=f1e1020]:
+      - generic [ref=f1e1021]:
+        - heading "कहानियाँ" [level=1] [ref=f1e1022]
+        - paragraph [ref=f1e1023]: कुछ कहानियाँ पढ़ी नहीं जातीं, महसूस की जाती हैं।
+      - generic [ref=f1e1029]:
+        - generic [ref=f1e1030]:
+          - generic [ref=f1e1031]: कहानियाँ खोजें
+          - generic [ref=f1e1032]:
+            - textbox "कहानियाँ खोजें" [disabled] [ref=f1e1033]:
+              - /placeholder: कहानियाँ खोजें...
+            - generic [ref=f1e1034]: जल्द
+        - generic [ref=f1e1035]:
+          - generic [ref=f1e1036]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [disabled] [ref=f1e1037]:
+            - option "श्रेणी" [selected]
+      - generic [ref=f1e1038]:
+        - article [ref=f1e1039]:
+          - generic [ref=f1e1041]:
+            - generic [ref=f1e1042]: ❧
+            - text: कवर चित्र
+          - generic [ref=f1e1043]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=f1e1044]
+            - paragraph [ref=f1e1045]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=f1e1046]: 10 मिनट पढ़ने का समय
+            - paragraph [ref=f1e1048]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=f1e1049]:
+          - generic [ref=f1e1051]:
+            - generic [ref=f1e1052]: ❧
+            - text: कवर चित्र
+          - generic [ref=f1e1053]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=f1e1054]
+            - paragraph [ref=f1e1055]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=f1e1056]: 15 मिनट पढ़ने का समय
+            - paragraph [ref=f1e1058]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=f1e1059]:
+          - generic [ref=f1e1061]:
+            - generic [ref=f1e1062]: ❧
+            - text: कवर चित्र
+          - generic [ref=f1e1063]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=f1e1064]
+            - paragraph [ref=f1e1065]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=f1e1066]: 12 मिनट पढ़ने का समय
+            - paragraph [ref=f1e1068]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=f1e1069]:
+          - generic [ref=f1e1071]:
+            - generic [ref=f1e1072]: ❧
+            - text: कवर चित्र
+          - generic [ref=f1e1073]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=f1e1074]
+            - paragraph [ref=f1e1075]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=f1e1076]: 8 मिनट पढ़ने का समय
+            - paragraph [ref=f1e1078]: "[यह प्लेसहोल्डर कार्ड है]"
+      - button "और कहानियाँ देखें" [disabled] [ref=f1e1080]
+  - contentinfo [ref=f1e993]:
+    - generic [ref=f1e995]:
+      - generic [ref=f1e1002]:
+        - link "प्रतिमा" [ref=f1e1003] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=f1e1004]: साहित्य संग्रह
+      - paragraph [ref=f1e1006]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=f1e1007]:
+        - link "कविताएँ" [ref=f1e1008] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=f1e1009] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=f1e1010] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=f1e1015]:
+        - paragraph [ref=f1e1016]: © 2026 प्रतिमा
+        - paragraph [ref=f1e1017]: सर्वाधिकार सुरक्षित
+      - generic [ref=f1e1018]: ❧

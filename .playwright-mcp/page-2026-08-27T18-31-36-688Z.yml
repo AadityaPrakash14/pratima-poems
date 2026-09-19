@@ -1,0 +1,52 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - heading "कहानियाँ" [level=1] [ref=e178]
+        - paragraph [ref=e179]: कुछ कहानियाँ पढ़ी नहीं जातीं, महसूस की जाती हैं।
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - generic [ref=e187]: कहानियाँ खोजें
+          - generic [ref=e188]:
+            - textbox "कहानियाँ खोजें" [disabled] [ref=e189]:
+              - /placeholder: कहानियाँ खोजें...
+            - generic [ref=e190]: जल्द
+        - generic [ref=e191]:
+          - generic [ref=e192]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [disabled] [ref=e193]:
+            - option "श्रेणी" [selected]
+      - generic [ref=e194]:
+        - generic [ref=e195]: ❧
+        - paragraph [ref=e196]: कहानियाँ लोड हो रही हैं...
+  - contentinfo [ref=e114]:
+    - generic [ref=e116]:
+      - generic [ref=e123]:
+        - link "प्रतिमा" [ref=e124] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e125]: साहित्य संग्रह
+      - paragraph [ref=e127]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e128]:
+        - link "कविताएँ" [ref=e129] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e130] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e131] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: © 2026 प्रतिमा
+        - paragraph [ref=e138]: सर्वाधिकार सुरक्षित
+      - generic [ref=e139]: ❧

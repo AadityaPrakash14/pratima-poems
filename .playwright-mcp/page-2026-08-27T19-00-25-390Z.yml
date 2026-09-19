@@ -1,0 +1,54 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "कहानियाँ" [level=1] [ref=e17]
+        - paragraph [ref=e18]: कुछ कहानियाँ पढ़ी नहीं जातीं, महसूस की जाती हैं।
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: कहानियाँ खोजें
+          - textbox "कहानियाँ खोजें" [ref=e28]:
+            - /placeholder: कहानियाँ खोजें...
+        - generic [ref=e29]:
+          - generic [ref=e30]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [ref=e31] [cursor=pointer]:
+            - option "सभी श्रेणियाँ" [selected]
+            - option "nature"
+      - generic [ref=e72]:
+        - generic [ref=e73]: ✧
+        - heading "अभी कोई कहानी नहीं है" [level=3] [ref=e74]
+        - paragraph [ref=e75]: नई कहानियाँ जल्द ही यहाँ प्रकाशित होंगी।
+        - link "मुखपृष्ठ पर वापस जाएँ →" [ref=e76] [cursor=pointer]:
+          - /url: "#/"
+  - contentinfo [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e44]:
+        - link "प्रतिमा" [ref=e45] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e46]: साहित्य संग्रह
+      - paragraph [ref=e48]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e49]:
+        - link "कविताएँ" [ref=e50] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e51] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e52] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: © 2026 प्रतिमा
+        - paragraph [ref=e59]: सर्वाधिकार सुरक्षित
+      - generic [ref=e60]: ❧

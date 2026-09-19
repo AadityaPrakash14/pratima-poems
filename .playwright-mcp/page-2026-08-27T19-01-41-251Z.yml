@@ -1,0 +1,51 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e233]:
+      - heading "लेखिका" [level=2] [ref=e238]
+      - generic [ref=e242]:
+        - generic [ref=e243]: "[चित्र]"
+        - heading "प्रतिमा" [level=2] [ref=e245]
+        - generic [ref=e246]:
+          - paragraph [ref=e247]: "[लेखिका का विस्तृत परिचय यहाँ आएगा।]"
+          - paragraph [ref=e248]: "[यह प्लेसहोल्डर टेक्स्ट है। वास्तविक जीवनी और लेखन यात्रा का विवरण यहाँ जोड़ा जाएगा।]"
+      - generic [ref=e254]:
+        - heading "मेरी लेखन यात्रा" [level=3] [ref=e255]
+        - generic [ref=e256]:
+          - paragraph [ref=e257]: "[लेखन यात्रा की समयरेखा यहाँ आएगी।]"
+          - paragraph [ref=e258]: "[यह अनुभाग लेखिका की लेखन शुरुआत, प्रेरणा, और साहित्यिक यात्रा का विवरण प्रस्तुत करेगा।]"
+      - generic [ref=e264]:
+        - heading "प्रेरणा" [level=3] [ref=e265]
+        - paragraph [ref=e267]: "[लेखिका की प्रेरणा के स्रोतों का विवरण यहाँ आएगा।]"
+      - paragraph [ref=e271]: "[मूल हस्तलिखित पृष्ठों का संग्रह जल्द ही उपलब्ध होगा।]"
+  - contentinfo [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e44]:
+        - link "प्रतिमा" [ref=e45] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e46]: साहित्य संग्रह
+      - paragraph [ref=e48]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e49]:
+        - link "कविताएँ" [ref=e50] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e51] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e52] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: © 2026 प्रतिमा
+        - paragraph [ref=e59]: सर्वाधिकार सुरक्षित
+      - generic [ref=e60]: ❧

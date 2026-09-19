@@ -1,0 +1,87 @@
+- generic [ref=e1032]:
+  - banner [ref=e1033]:
+    - navigation [ref=e1034]:
+      - generic [ref=e1035]:
+        - link "प्रतिमा" [ref=e1036] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e1037]:
+          - link "मुखपृष्ठ" [ref=e1038] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e1039] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e1040] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e1041] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e1042]:
+    - generic [ref=e1290]:
+      - generic [ref=e1291]:
+        - heading "कहानियाँ" [level=1] [ref=e1292]
+        - paragraph [ref=e1293]: कुछ कहानियाँ पढ़ी नहीं जातीं, महसूस की जाती हैं।
+      - generic [ref=e1299]:
+        - generic [ref=e1300]:
+          - generic [ref=e1301]: कहानियाँ खोजें
+          - generic [ref=e1302]:
+            - textbox "कहानियाँ खोजें" [disabled] [ref=e1303]:
+              - /placeholder: कहानियाँ खोजें...
+            - generic [ref=e1304]: जल्द
+        - generic [ref=e1305]:
+          - generic [ref=e1306]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [disabled] [ref=e1307]:
+            - option "श्रेणी" [selected]
+      - generic [ref=e1308]:
+        - article [ref=e1309]:
+          - generic [ref=e1311]:
+            - generic [ref=e1312]: ❧
+            - text: कवर चित्र
+          - generic [ref=e1313]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=e1314]
+            - paragraph [ref=e1315]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e1316]: 10 मिनट पढ़ने का समय
+            - paragraph [ref=e1318]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e1319]:
+          - generic [ref=e1321]:
+            - generic [ref=e1322]: ❧
+            - text: कवर चित्र
+          - generic [ref=e1323]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=e1324]
+            - paragraph [ref=e1325]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e1326]: 15 मिनट पढ़ने का समय
+            - paragraph [ref=e1328]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e1329]:
+          - generic [ref=e1331]:
+            - generic [ref=e1332]: ❧
+            - text: कवर चित्र
+          - generic [ref=e1333]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=e1334]
+            - paragraph [ref=e1335]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e1336]: 12 मिनट पढ़ने का समय
+            - paragraph [ref=e1338]: "[यह प्लेसहोल्डर कार्ड है]"
+        - article [ref=e1339]:
+          - generic [ref=e1341]:
+            - generic [ref=e1342]: ❧
+            - text: कवर चित्र
+          - generic [ref=e1343]:
+            - heading "[कहानी का शीर्षक]" [level=3] [ref=e1344]
+            - paragraph [ref=e1345]: "[यहाँ कहानी का संक्षिप्त अंश आएगा। यह प्लेसहोल्डर टेक्स्ट है और लेखिका की वास्तविक रचना नहीं है।]"
+            - generic [ref=e1346]: 8 मिनट पढ़ने का समय
+            - paragraph [ref=e1348]: "[यह प्लेसहोल्डर कार्ड है]"
+      - button "और कहानियाँ देखें" [disabled] [ref=e1350]
+  - contentinfo [ref=e1193]:
+    - generic [ref=e1195]:
+      - generic [ref=e1202]:
+        - link "प्रतिमा" [ref=e1203] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e1204]: साहित्य संग्रह
+      - paragraph [ref=e1206]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e1207]:
+        - link "कविताएँ" [ref=e1208] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e1209] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e1210] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e1215]:
+        - paragraph [ref=e1216]: © 2026 प्रतिमा
+        - paragraph [ref=e1217]: सर्वाधिकार सुरक्षित
+      - generic [ref=e1218]: ❧

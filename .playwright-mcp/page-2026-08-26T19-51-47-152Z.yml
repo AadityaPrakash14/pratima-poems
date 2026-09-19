@@ -1,0 +1,32 @@
+- generic [ref=e1351]:
+  - banner [ref=e1352]:
+    - generic [ref=e1353]:
+      - link "प्रतिमा Admin" [ref=e1355] [cursor=pointer]:
+        - /url: "#/admin/dashboard"
+        - generic [ref=e1356]: प्रतिमा
+        - generic [ref=e1357]: Admin
+      - generic [ref=e1358]:
+        - generic "princeaditya2001@gmail.com" [ref=e1359]
+        - button "लॉगआउट" [ref=e1360]
+  - complementary [ref=e1361]:
+    - navigation [ref=e1362]:
+      - generic [ref=e1363]:
+        - link "Dashboard" [ref=e1364] [cursor=pointer]:
+          - /url: "#/admin/dashboard"
+        - link "कविताएँ" [ref=e1368] [cursor=pointer]:
+          - /url: "#/admin/poems"
+        - link "कहानियाँ" [ref=e1372] [cursor=pointer]:
+          - /url: "#/admin/stories"
+        - link "श्रेणियाँ" [ref=e1376] [cursor=pointer]:
+          - /url: "#/admin/categories"
+      - link "साइट देखें" [ref=e1383] [cursor=pointer]:
+        - /url: "#/"
+      - paragraph [ref=e1388]: प्रतिमा Admin Portal
+  - main [ref=e1389]:
+    - generic [ref=e1462]:
+      - generic [ref=e1465]:
+        - heading "Dashboard" [level=1] [ref=e1466]
+        - paragraph [ref=e1467]: प्रतिमा एडमिन पोर्टल में आपका स्वागत है।
+      - status [ref=e1469]:
+        - paragraph [ref=e1473]: डैशबोर्ड लोड हो रहा है...
+        - generic [ref=e1474]: डैशबोर्ड लोड हो रहा है...

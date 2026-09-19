@@ -1,0 +1,57 @@
+- generic [ref=e259]:
+  - banner [ref=e260]:
+    - navigation [ref=e261]:
+      - generic [ref=e262]:
+        - link "प्रतिमा" [ref=e263] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e264]:
+          - link "मुखपृष्ठ" [ref=e265] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e266] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e267] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e268] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e269]:
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - heading "कविताएँ" [level=1] [ref=e367]
+        - paragraph [ref=e368]: शब्दों में संजोए हुए अनुभव...
+      - generic [ref=e374]:
+        - generic [ref=e375]:
+          - generic [ref=e376]: कविताएँ खोजें
+          - textbox "कविताएँ खोजें" [ref=e378]:
+            - /placeholder: कविताएँ खोजें...
+        - generic [ref=e379]:
+          - generic [ref=e380]: श्रेणी चुनें
+          - combobox "श्रेणी चुनें" [ref=e381] [cursor=pointer]:
+            - option "सभी श्रेणियाँ" [selected]
+            - option "nature"
+      - link [ref=e386] [cursor=pointer]:
+        - /url: "#/poems/topic"
+        - article [ref=e387]:
+          - generic [ref=e389]:
+            - heading "topic" [level=3] [ref=e390]
+            - paragraph [ref=e391]: kaisa
+            - generic [ref=e392]:
+              - generic [ref=e393]: 1 मिनट
+              - generic [ref=e395]: पढ़ें →
+  - contentinfo [ref=e309]:
+    - generic [ref=e311]:
+      - generic [ref=e318]:
+        - link "प्रतिमा" [ref=e319] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e320]: साहित्य संग्रह
+      - paragraph [ref=e322]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e323]:
+        - link "कविताएँ" [ref=e324] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e325] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e326] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e331]:
+        - paragraph [ref=e332]: © 2026 प्रतिमा
+        - paragraph [ref=e333]: सर्वाधिकार सुरक्षित
+      - generic [ref=e334]: ❧

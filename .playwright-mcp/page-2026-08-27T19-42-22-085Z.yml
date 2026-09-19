@@ -1,0 +1,77 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link "प्रतिमा" [ref=e7] [cursor=pointer]:
+          - /url: "#/"
+        - generic [ref=e8]:
+          - link "मुखपृष्ठ" [ref=e9] [cursor=pointer]:
+            - /url: "#/"
+          - link "कविताएँ" [ref=e10] [cursor=pointer]:
+            - /url: "#/poems"
+          - link "कहानियाँ" [ref=e11] [cursor=pointer]:
+            - /url: "#/stories"
+          - link "लेखिका" [ref=e12] [cursor=pointer]:
+            - /url: "#/about"
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e29]:
+        - heading "प्रतिमा" [level=1] [ref=e34]
+        - paragraph [ref=e35]: साहित्य संग्रह
+        - paragraph [ref=e42]: शब्द जो वर्षों तक डायरी में रहे,अब एक नई यात्रा पर हैं।
+        - link "साहित्य पढ़ें" [ref=e43] [cursor=pointer]:
+          - /url: "#/poems"
+      - generic [ref=e51]:
+        - generic [ref=e57]:
+          - generic [ref=e58]: ✧
+          - text: "[चित्र]"
+        - generic [ref=e71]:
+          - paragraph [ref=e72]: लेखिका
+          - heading "प्रतिमा" [level=2] [ref=e73]
+          - paragraph [ref=e75]:
+            - emphasis [ref=e76]: "[लेखिका का परिचय यहाँ आएगा। यह प्लेसहोल्डर टेक्स्ट है।]"
+          - link "और जानें →" [ref=e77] [cursor=pointer]:
+            - /url: "#/about"
+            - text: और जानें
+            - generic [ref=e78]: →
+      - generic [ref=e80]:
+        - generic [ref=e82]:
+          - heading "कविताएँ" [level=2] [ref=e84]
+          - paragraph [ref=e86]: शब्दों में संजोए हुए अनुभव...
+          - link "सभी कविताएँ →" [ref=e87] [cursor=pointer]:
+            - /url: "#/poems"
+        - generic [ref=e88]:
+          - generic [ref=e89]: ❧
+          - paragraph [ref=e90]: कविताएँ लोड हो रही हैं...
+      - generic [ref=e96]:
+        - generic [ref=e98]:
+          - heading "कहानियाँ" [level=2] [ref=e100]
+          - paragraph [ref=e102]: कुछ कहानियाँ पढ़ी नहीं जातीं, महसूस की जाती हैं।
+          - link "सभी कहानियाँ →" [ref=e103] [cursor=pointer]:
+            - /url: "#/stories"
+        - generic [ref=e104]:
+          - generic [ref=e105]: ❧
+          - paragraph [ref=e106]: कहानियाँ लोड हो रही हैं...
+      - generic [ref=e108]:
+        - generic [ref=e109]: "\""
+        - blockquote [ref=e110]:
+          - paragraph [ref=e111]: "[यहाँ एक साहित्यिक उद्धरण आएगा। यह प्लेसहोल्डर टेक्स्ट है।]"
+          - generic [ref=e112]: — प्रतिमा
+  - contentinfo [ref=e114]:
+    - generic [ref=e116]:
+      - generic [ref=e123]:
+        - link "प्रतिमा" [ref=e124] [cursor=pointer]:
+          - /url: "#/"
+        - paragraph [ref=e125]: साहित्य संग्रह
+      - paragraph [ref=e127]: शब्दों में संजोए हुए अनुभव...
+      - navigation "Footer navigation" [ref=e128]:
+        - link "कविताएँ" [ref=e129] [cursor=pointer]:
+          - /url: "#/poems"
+        - link "कहानियाँ" [ref=e130] [cursor=pointer]:
+          - /url: "#/stories"
+        - link "लेखिका" [ref=e131] [cursor=pointer]:
+          - /url: "#/about"
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: © 2026 प्रतिमा
+        - paragraph [ref=e138]: सर्वाधिकार सुरक्षित
+      - generic [ref=e139]: ❧
