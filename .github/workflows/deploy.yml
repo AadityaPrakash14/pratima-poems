@@ -61,6 +61,17 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
 
+      - name: Verify Supabase config in build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+        run: |
+          if grep -rFq "$VITE_SUPABASE_URL" dist/; then
+            echo "Supabase URL found in production build"
+          else
+            echo "::error::Supabase URL was not found in production build"
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
